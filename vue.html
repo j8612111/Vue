@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Vue</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <style>
     th,
     td {
       text-align-last: left;
-      width: 200px;
+      width: 250px;
     }
   </style>
 </head>
@@ -28,23 +26,18 @@
         title: '予習',
         time: 30,
       },
+
       {
         id: 2,
-        title: '学習',
-        time: 40,
-      },
-      {
-        id: 3,
         title: '復習',
-        time: 50,
+        time: 40,
       },
     ];
 
     Vue.component('add-todo-list-item', {
       data(){
         return {
-          todoContent: 'task',
-          estimatedTime: 60,
+          estimatedTime: 50,
         }
       },
       template: `
@@ -65,16 +58,12 @@
             time: this.estimatedTime,
           };
 
-
           vm.todos.push(pushItem);
 
-
-          this.todoContent = '';
-          this.estimatedTime = 60;
+          this.estimatedTime = 50;
         }
       }
     });
-
 
     Vue.component('todo-list-item', {
       props: {
@@ -91,7 +80,6 @@
         </tr>
       `,
     });
-
 
     Vue.component('todo', {
       props: {
@@ -111,7 +99,6 @@
       </div>
       `,
     });
-
 
     const vm = new Vue({
       el: '#app',
